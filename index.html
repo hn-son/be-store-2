@@ -27,6 +27,12 @@
     ></script>
   </head>
   <body>
+    <div class="header-mobile">
+      <div class="icon"><i class="fa-solid fa-table-cells-large"></i></div>
+      <div class="icon"><i class="fa-solid fa-user"></i></div>
+      <div class="icon"><i class="fa-solid fa-bag-shopping"></i></div>
+      <div class="icon"><i class="fa-solid fa-heart"></i></div>
+    </div>
     <div class="header">
       <!-- <div class="header-banner"></div> -->
       <div class="header-section">
@@ -96,48 +102,105 @@
         </div>
       </div>
       <div class="header-section-services">
-        <div class="header-search row">
-          <div class="col-md-auto">
+        <div class="header-search">
+          <div class="logo">
+            <div class="sidebar-menu">
+              <input type="checkbox" id="nav-control" class="nav-control" />
+              <label for="nav-control" class="toggle-button">
+                <i class="fa-solid fa-bars"></i>
+              </label>
+              <nav class="navigation">
+                <label for="nav-control">
+                  <i class="fa-solid fa-xmark"></i>
+                </label>
+                <ul>
+                  <li>
+                    <img
+                      src="./assets/images/bethemestore2-cat3.svg"
+                      alt=""
+                    />Computers
+                  </li>
+                  <li>
+                    <img
+                      src="./assets/images/bethemestore2-cat4.svg"
+                      alt=""
+                    />Smartphone
+                  </li>
+                  <li>
+                    <img
+                      src="./assets/images/bethemestore2-cat5.svg"
+                      alt=""
+                    />Watches
+                  </li>
+                  <li>
+                    <img
+                      src="./assets/images/bethemestore2-cat6.svg"
+                      alt=""
+                    />TV/Audio
+                  </li>
+                  <li>
+                    <img
+                      src="./assets/images/bethemestore2-cat7.svg"
+                      alt=""
+                    />Tablets
+                  </li>
+                  <li>
+                    <img
+                      src="./assets/images/bethemestore2-cat1.svg"
+                      alt=""
+                    />Gaming
+                  </li>
+                  <li>
+                    <img
+                      src="./assets/images/bethemestore2-cat2.svg"
+                      alt=""
+                    />View all
+                  </li>
+                </ul>
+              </nav>
+            </div>
             <img src="./assets/images/bethemestore2.svg" alt="" />
           </div>
-          <div class="col-8">
-            <div class="header-searchbar">
-              <i class="fa fa-search"></i>
-              <input type="text" placeholder="Enter your search" />
-            </div>
+          <div class="header-searchbar">
+            <i class="fa fa-search"></i>
+            <input type="text" placeholder="Enter your search" />
           </div>
-          <div class="col-md-auto">
-            <div class="header-services">
-              <div class="service">
-                <img
-                  src="./assets/images/bethemestore2-header-icon1.svg"
-                  alt=""
-                />
-                <div class="content">
-                  <span>Support 24/7</span>
-                  <span>+61(0)383766248</span>
-                </div>
+          <div class="header-services">
+            <div class="service search-icon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="service support">
+              <img
+                src="./assets/images/bethemestore2-header-icon1.svg"
+                alt=""
+              />
+              <div class="content">
+                Support 24/7
+                <br />
+                <span>+61(0)383766248</span>
               </div>
-              <div class="service">
-                <img
-                  src="./assets/images/bethemestore2-header-icon2.svg"
-                  alt=""
-                />
-                <div class="content">
-                  <span>Login</span>
-                  <span>or register</span>
-                </div>
+            </div>
+            <div class="service">
+              <img
+                src="./assets/images/bethemestore2-header-icon2.svg"
+                alt=""
+              />
+              <div class="content">
+                Login
+                <br />
+                <span>or register</span>
               </div>
-              <div class="service">
-                <img
-                  src="./assets/images/bethemestore2-header-icon3.svg"
-                  alt=""
-                />
-                <span class="count">0</span>
-                <div class="content">
-                  <span>Your</span>
-                  <span>cart</span>
-                </div>
+            </div>
+            <div class="service">
+              <img
+                src="./assets/images/bethemestore2-header-icon3.svg"
+                alt=""
+              />
+              <span class="count">0</span>
+              <div class="content">
+                Your
+                <br />
+                <span>cart</span>
               </div>
             </div>
           </div>
@@ -396,10 +459,10 @@
               </div>
               <div class="slider-wrapper">
                 <input
-                  class="text-input"
+                  class="text-input range-price min"
                   type="number"
                   name="min"
-                  value="65.00"
+                  value="0"
                 />
                 <div class="price-slider">
                   <div class="range-slider">
@@ -409,26 +472,26 @@
                     <input
                       type="range"
                       class="min"
-                      min="0.00"
-                      max="1000.00"
-                      value="65.00"
-                      step="0.01"
+                      min="0"
+                      max="1000"
+                      value="0"
+                      step="1"
                     />
                     <input
                       type="range"
                       class="max"
                       min="0"
-                      max="1000.00"
-                      value="700.00"
-                      step="0.01"
+                      max="1000"
+                      value="700"
+                      step="1"
                     />
                   </div>
                 </div>
                 <input
-                  class="text-input"
+                  class="text-input range-price max"
                   type="number"
                   name="max"
-                  value="700.00"
+                  value="700"
                 />
               </div>
             </div>
@@ -660,26 +723,28 @@
                 </div>
                 <div class="grid-selects">
                   <ul>
-                    <li><i class="fal fa-table"></i></li>
-                    <li><i class="fal fa-table"></i></li>
-                    <li><i class="fal fa-table"></i></li>
-                    <li><i class="fal fa-table"></i></li>
+                    <li onclick="onChangeToTableView()"><i class="fa-solid fa-table-cells"></i></li>
+                    <li><i class="fa-solid fa-table-cells-large"></i></li>
+                    <li onclick="onChangeToListView()"><i class="fa-solid fa-table-list"></i></li>
                   </ul>
                 </div>
-               <div class="select-menu">
-                <select>
-                  <option value="">Default sorting</option>
-                  <option value="">Default sorting</option>
-                  <option value="">Default sorting</option>
-                  <option value="">Default sorting</option>
-                </select>
-               </div>
+                <div class="select-menu">
+                  <select>
+                    <option value="">Default sorting</option>
+                    <option value="">Default sorting</option>
+                    <option value="">Default sorting</option>
+                    <option value="">Default sorting</option>
+                  </select>
+                </div>
               </div>
             </div>
-            <div class="products-box">
+            <div class="products-box" id="products-box">
               <div class="product">
                 <div class="img">
-                  <img src="./assets/images/bethemestore2-products-pic4.webp" alt="">
+                  <img
+                    src="./assets/images/bethemestore2-products-pic4.webp"
+                    alt=""
+                  />
                 </div>
                 <div class="product-info">
                   <span class="name">BeSmartphone1</span>
@@ -695,7 +760,10 @@
               </div>
               <div class="product">
                 <div class="img">
-                  <img src="./assets/images/bethemestore2-products-pic4.webp" alt="">
+                  <img
+                    src="./assets/images/bethemestore2-products-pic4.webp"
+                    alt=""
+                  />
                 </div>
                 <div class="product-info">
                   <span class="name">BeSmartphone1</span>
@@ -711,7 +779,10 @@
               </div>
               <div class="product">
                 <div class="img">
-                  <img src="./assets/images/bethemestore2-products-pic4.webp" alt="">
+                  <img
+                    src="./assets/images/bethemestore2-products-pic4.webp"
+                    alt=""
+                  />
                 </div>
                 <div class="product-info">
                   <span class="name">BeSmartphone1</span>
@@ -723,6 +794,86 @@
                     <span class="fas fa-star"></span>
                   </div>
                   <span class="price">$2,000.00 - $3,000.00</span>
+                </div>
+              </div>
+            </div>
+            <div class="products-listmode-box"> 
+              <div class="product">
+                <div class="img">
+                  <img
+                    src="./assets/images/bethemestore2-products-pic4.webp"
+                    alt=""
+                  />
+                </div>
+                <div class="product-info">
+                  <span class="name">BeSmartphone1</span>
+                  <div class="rate">
+                    <span class="fas fa-star checked"></span>
+                    <span class="fas fa-star checked"></span>
+                    <span class="fas fa-star checked"></span>
+                    <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span>
+                  </div>
+                  <span class="price">$2,000.00 - $3,000.00</span>
+                  <span class="detail"
+                    >Integer aliquet platea pulvinar praesent enim risus tellus
+                    cras sit iaculis. Ridiculus aliquam pellentesque risus netus
+                    cras porta. Et aliquam eros adipiscing pulvinar dictum
+                    scelerisque per. Porta tempus lacinia vulputate purus nibh
+                    at.</span
+                  >
+                </div>
+              </div>
+              <div class="product">
+                <div class="img">
+                  <img
+                    src="./assets/images/bethemestore2-products-pic4.webp"
+                    alt=""
+                  />
+                </div>
+                <div class="product-info">
+                  <span class="name">BeSmartphone1</span>
+                  <div class="rate">
+                    <span class="fas fa-star checked"></span>
+                    <span class="fas fa-star checked"></span>
+                    <span class="fas fa-star checked"></span>
+                    <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span>
+                  </div>
+                  <span class="price">$2,000.00 - $3,000.00</span>
+                  <span class="detail"
+                    >Integer aliquet platea pulvinar praesent enim risus tellus
+                    cras sit iaculis. Ridiculus aliquam pellentesque risus netus
+                    cras porta. Et aliquam eros adipiscing pulvinar dictum
+                    scelerisque per. Porta tempus lacinia vulputate purus nibh
+                    at.</span
+                  >
+                </div>
+              </div>
+              <div class="product">
+                <div class="img">
+                  <img
+                    src="./assets/images/bethemestore2-products-pic4.webp"
+                    alt=""
+                  />
+                </div>
+                <div class="product-info">
+                  <span class="name">BeSmartphone1</span>
+                  <div class="rate">
+                    <span class="fas fa-star checked"></span>
+                    <span class="fas fa-star checked"></span>
+                    <span class="fas fa-star checked"></span>
+                    <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span>
+                  </div>
+                  <span class="price">$2,000.00 - $3,000.00</span>
+                  <span class="detail"
+                    >Integer aliquet platea pulvinar praesent enim risus tellus
+                    cras sit iaculis. Ridiculus aliquam pellentesque risus netus
+                    cras porta. Et aliquam eros adipiscing pulvinar dictum
+                    scelerisque per. Porta tempus lacinia vulputate purus nibh
+                    at.</span
+                  >
                 </div>
               </div>
             </div>
@@ -803,15 +954,15 @@
 <script>
   let rangeMin = 100;
   const range = document.querySelector(".range-selected");
-  const rangeInput = document.querySelectorAll("input.text-input");
-  const rangePrice = document.querySelectorAll(".range-input input");
+  const rangeInput = document.querySelectorAll(".range-input input");
+  const rangePrice = document.querySelectorAll(".range-price");
+
   rangeInput.forEach((input) => {
     input.addEventListener("input", (e) => {
-      console.log(e);
       let minRange = parseInt(rangeInput[0].value);
       let maxRange = parseInt(rangeInput[1].value);
       if (maxRange - minRange < rangeMin) {
-        if (e.target.className === "min") {
+        if (e.target.className.split("").includes("min")) {
           rangeInput[0].value = maxRange - rangeMin;
         } else {
           rangeInput[1].value = minRange + rangeMin;
@@ -825,13 +976,48 @@
     });
   });
 
+  rangePrice.forEach((input) => {
+    input.addEventListener("input", (e) => {
+      let minPrice = parseInt(rangePrice[0].value);
+      let maxPrice = parseInt(rangePrice[1].value);
+      let rangeMax = parseInt(rangeInput[1].max);
+      if (maxPrice - minPrice >= rangeMin && maxPrice <= rangeMax) {
+        if (e.target.className.split(" ").includes("min")) {
+          rangeInput[0].value = minPrice;
+          range.style.left = (minPrice / rangeInput[0].max) * 100 + "%";
+        } else {
+          rangeInput[1].value = maxPrice;
+          range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
+        }
+      }
+    });
+  });
+
   function openNav() {
     document.getElementById("dark-background").style.display = "block";
-    console.log("open");
   }
 
   function closeNav() {
     document.getElementById("dark-background").style.display = "none";
-    console.log("close");
+  }
+
+  const screenWidth = window.screen.width
+  console.log({screenWidth})
+
+  const productTableMode = document.querySelector(".products-box")
+  const productListDetailMode = document.querySelector(".products-listmode-box")
+
+  function onChangeToTableView() {
+    if (screenWidth > 767) {
+      productListDetailMode.style.display = "none"
+      productTableMode.style.display = "flex"
+    }
+  }
+
+  function onChangeToListView() {
+    if (screenWidth > 767) {
+      productListDetailMode.style.display = "flex"
+      productTableMode.style.display = "none"
+    }
   }
 </script>

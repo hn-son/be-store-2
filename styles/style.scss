@@ -31,10 +31,34 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+.header-mobile {
+    display: none;
+    z-index: 666;
+    background-color: #fff;
+    width: 100%;
+    padding: 20px 0;
+    bottom: 0;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .1);
+
+    .icon {
+        font-size: 24px;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media only screen and (max-width: 767px) {
+        display: flex;
+        position: fixed;
+    }
+}
+
 .header {
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.12);
 
     .header-banner {
         height: 44px;
@@ -52,9 +76,17 @@ body {
         justify-content: space-between;
         align-items: center;
 
+        @media only screen and (max-width: 959px) {
+            justify-content: center;
+        }
+
         .shipping-infor {
             color: $grey-text;
             font-size: 14px;
+
+            @media only screen and (max-width: 959px) {
+                display: none;
+            }
         }
 
         .menu-section {
@@ -172,14 +204,103 @@ body {
     .header-section-services {
         background-color: #fff;
         padding: 20px 5% 10px 5%;
+        width: 100%;
+        flex-wrap: nowrap;
 
         .header-search {
             display: flex;
             align-items: center;
+            width: 100%;
+
+            .logo {
+                width: auto;
+                max-width: 100%;
+                display: flex;
+                align-items: center;
+
+                .sidebar-menu {
+                    display: none;
+
+                    @media only screen and (max-width: 1110px) {
+                        display: block
+                    }
+
+                    .nav-control {
+                        position: absolute;
+                        left: -9999px;
+                        width: 100%;
+                        clip: rect(0, 0, 0, 0);
+
+                        &:checked~.navigation {
+                            right: 0;
+                            opacity: 1;
+                            transition: right 1s, opacity 1s;
+                        }
+                    }
+
+                    .toggle-button {
+                        i {
+                            font-size: 24px;
+                            color: $blue-color;
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .navigation {
+                        background: #fff;
+                        position: fixed;
+                        top: 0;
+                        bottom: 0;
+                        right: -100%;
+                        overflow: hidden;
+                        transition: right 1s;
+                        width: 350px;
+                        height: 100vh;
+                        z-index: 100;
+                        display: flex;
+                        padding: 50px;
+                        align-items: center;
+
+                        label {
+                            position: absolute;
+                            top: 20px;
+                            right: 20px;
+                            opacity: .5;
+
+                            i {
+                                font-size: 24px;
+                            }
+                        }
+
+                        ul {
+                            list-style: none;
+                            margin: 0;
+
+                            li {
+                                display: flex;
+                                align-items: center;
+                                font-size: 15px;
+                                margin-bottom: 20px;
+
+                                img {
+                                    width: 25px;
+                                    height: 25px;
+                                    margin-right: 5px;
+                                }
+                            }
+                        }
+                    }
+
+
+                }
+            }
 
             .header-searchbar {
-                width: 100%;
+                width: auto;
+                max-width: 100%;
                 position: relative;
+                margin: 0 5%;
+                flex-grow: 1;
 
                 i {
                     position: absolute;
@@ -214,6 +335,8 @@ body {
 
             .header-services {
                 display: flex;
+                width: auto;
+                max-width: 100%;
 
                 .service {
                     cursor: pointer;
@@ -223,11 +346,7 @@ body {
 
                     &:hover {
                         .content {
-                            span {
-                                &:first-child {
-                                    color: $blue-color
-                                }
-                            }
+                            color: $blue-color
                         }
 
                         ;
@@ -255,22 +374,33 @@ body {
 
                     .content {
                         margin-left: 10px;
-                        display: flex;
-                        flex-direction: column;
+                        font-size: 14px;
+                        line-height: 22px;
+                        color: $black-text;
 
                         span {
-                            font-size: 14px;
-                            line-height: 22px;
-                            font-weight: bold;
-
-                            &:first-child {
-                                color: $black-text;
-                            }
-
-                            &:last-child {
-                                color: $grey-text;
-                            }
+                            color: $grey-text;
                         }
+
+                    }
+                }
+
+                .support {
+                    @media only screen and (max-width: 959px) {
+                        display: none;
+                    }
+                }
+
+                .search-icon {
+                    display: none;
+
+                    i {
+                        font-size: 18px;
+                        color: $blue-color
+                    }
+
+                    @media only screen and (max-width: 767px) {
+                        display: block;
                     }
                 }
             }
@@ -279,9 +409,12 @@ body {
 
     .header-navbar {
         padding: 10px 5% 0 5%;
-        box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.12);
         position: relative;
         background-color: #FFF;
+
+        @media only screen and (max-width: 1110px) {
+            display: none;
+        }
 
         .navbar-wrapper {
             .menu-nav {
@@ -458,6 +591,32 @@ body {
 
 
     }
+
+    @media only screen and (max-width: 767px) {
+        position: relative;
+
+        .header-section {
+            display: none;
+        }
+
+        .header-section-services {
+            .header-search {
+                justify-content: space-around;
+
+                .header-searchbar {
+                    display: none;
+                }
+
+                .header-services {
+                    .service {
+                        .content {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .main {
@@ -520,7 +679,7 @@ body {
 
                                 .range-selected {
                                     height: 100%;
-                                    left: 30%;
+                                    left: 0;
                                     right: 30%;
                                     position: absolute;
                                     border-radius: 5px;
@@ -570,7 +729,8 @@ body {
                     .btn-wrapper {
                         display: flex;
                         align-items: center;
-                        justify-content: space-between;
+                        justify-content: flex-start;
+                        flex-wrap: wrap;
 
                         .color-btn {
                             display: flex;
@@ -602,7 +762,7 @@ body {
                                 text-transform: uppercase;
                                 border: 1px solid grey;
                                 padding: 5px 10px;
-                                margin-right: 5px;
+                                margin: 0 5px 5px 0;
                                 border-radius: 5px;
                                 opacity: .5;
                             }
@@ -641,6 +801,10 @@ body {
                         p {
                             opacity: .5;
                         }
+
+                        @media only screen and (max-width: 767px) {
+                            display: none;
+                        }
                     }
 
                     .sort-box {
@@ -659,6 +823,10 @@ body {
                                     margin-right: 10px
                                 }
                             }
+
+                            @media only screen and (max-width: 767px) {
+                                display: none;
+                            }
                         }
 
                         .grid-selects {
@@ -670,7 +838,12 @@ body {
 
                                 li {
                                     margin-right: 10px;
+                                    cursor: pointer;
                                 }
+                            }
+
+                            @media only screen and (max-width: 767px) {
+                                display: none;
                             }
                         }
 
@@ -684,6 +857,11 @@ body {
                                 }
                             }
                         }
+                    }
+
+                    @media only screen and (max-width: 767px) {
+                        justify-content: flex-end;
+                        margin-bottom: 20px
                     }
                 }
 
@@ -739,6 +917,105 @@ body {
                                 }
                             }
 
+                        }
+
+                        @media only screen and (max-width: 1064px) {
+                            width: 48%;
+                        }
+
+                        @media only screen and (max-width: 767px) {
+                            width: 100%;
+                        }
+                    }
+
+                    @media only screen and (max-width: 767px) {
+                        display: flex !important;
+                    }
+                }
+
+                .products-listmode-box {
+                    display: none;
+                    justify-content: flex-start;
+                    align-items: center;
+                    flex-direction: column;
+
+                    .product {
+                        display: flex;
+                        justify-content: flex-start;
+                        flex-direction: row;
+                        align-items: center;
+                        background-color: #FFF;
+                        padding: 30px;
+                        border-radius: 16px;
+                        margin: 0 1% 20px;
+
+                        .img {
+                            img {
+                                max-width: 100%;
+                                height: auto;
+                            }
+                        }
+
+                        .product-info {
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            flex-direction: column;
+
+                            .name {
+                                font-size: 20px;
+                                font-weight: 700;
+                            }
+
+                            .rate {
+                                border-color: $blue-color;
+
+                                .checked {
+                                    color: $blue-color
+                                }
+                            }
+
+                            .price {
+                                color: $blue-color;
+                                font-size: 16px;
+
+                                span {
+                                    text-decoration: line-through;
+                                    opacity: .5;
+                                    font-size: 80%;
+                                    margin-right: 5px;
+                                }
+                            }
+
+                            .detail {
+                                text-align: center;
+                            }
+
+                        }
+                    }
+
+                    @media only screen and (max-width: 767px) {
+                        display: none !important;
+                    }
+                }
+            }
+
+            @media only screen and (max-width: 964px) {
+                display: flex;
+                flex-direction: column;
+
+                .filter-box {
+                    width: 100%;
+
+                    .range {
+                        .slider-wrapper {
+                            .text-input {
+                                width: 10% !important;
+                            }
+
+                            .price-slider {
+                                width: 75%;
+                            }
                         }
                     }
                 }
@@ -843,6 +1120,25 @@ body {
                 }
             }
         }
+
+        @media only screen and (max-width: 992px) {
+            display: flex;
+            flex-direction: column;
+
+            .contact-info-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .services-wrapper {
+                padding: 50px;
+
+                .column {
+                    align-items: center;
+                }
+            }
+        }
     }
 
     .cerfiticate {
@@ -859,5 +1155,9 @@ body {
                 color: $blue-color
             }
         }
+    }
+
+    @media only screen and (max-width: 767px) {
+        margin-bottom: 50px;
     }
 }
